@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "TTFirsNeue";
+  src: url("/font/TTFirsNeue-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TTFirsNeue";
+  src: url("/font/TTFirsNeue-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TTFirsNeue";
+  src: url("/font/TTFirsNeue-Light.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}

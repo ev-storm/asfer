@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
 
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+  },
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -13,5 +17,6 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/fonts", "@vueuse/nuxt"],
+  modules: ["@nuxt/fonts", "@vueuse/nuxt", "nuxt-bezier"],
+  css: ["@/assets/css/font.css"],
 });
