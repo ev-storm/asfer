@@ -18,6 +18,8 @@
   },
   "devDependencies": {
     "@nuxt/fonts": "^0.11.4",
+    "@nuxt/image": "^1.10.0",
+    "@vue-final-modal/nuxt": "^1.0.3",
     "@vueuse/nuxt": "^13.4.0",
     "nuxt-bezier": "^1.12.1"
   }

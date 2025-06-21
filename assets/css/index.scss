@@ -9,8 +9,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: "montserrat";
-  color: #fff;
-  // background: #577ba6;
+  background: #577ba6;
   background-image: url(/img/q.jpg);
   background-size: 100%;
   overflow: hidden;
@@ -29,9 +28,14 @@ textarea,
 select {
   font: inherit;
 }
+button {
+  background: transparent;
+  border-style: none;
+}
 .actent-font {
   font-family: "TTFirsNeue";
   font-weight: 400;
+  color: #fff;
 }
 .page-enter-active,
 .page-leave-active {

@@ -52,7 +52,12 @@ header {
   cursor: pointer;
 }
 .modal-btn {
+  width: 70px;
   cursor: pointer;
+}
+.modal-btn img {
+  height: 100%;
+  width: auto;
 }
 .modal {
   position: fixed;

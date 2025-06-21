@@ -17,6 +17,6 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/fonts", "@vueuse/nuxt", "nuxt-bezier"],
+  modules: ["@nuxt/fonts", "@vueuse/nuxt", "nuxt-bezier", "@nuxt/image"],
   css: ["@/assets/css/font.css"],
 });
