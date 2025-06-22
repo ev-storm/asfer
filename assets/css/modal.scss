@@ -33,38 +33,55 @@
   transform: translateX(0px);
 }
 
-.modal-con {
-  position: fixed;
+.fade-modal-enter-active,
+.fade-modal-leave-active {
+  transition: $tran;
+}
+.fade-modal-enter-from {
+  transform: translateX(50px);
+  opacity: 0;
+}
+.fade-modal-leave-to {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.modal {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed;
   top: 15%;
   right: 5%;
   width: 400px;
   height: 600px;
-  border-radius: 40px;
-  overflow: hidden;
-  z-index: 2;
-}
-.modal {
-  display: flex;
-  width: 398px;
-  height: 598px;
   padding: 40px 30px;
   position: absolute;
   z-index: 2;
   border-radius: 40px;
   background: #03194115;
+  z-index: 100;
   backdrop-filter: blur(70px);
 }
 .cursor-modal {
   position: absolute;
   width: 150px;
   height: 150px;
-  background: #b5cfff;
+  background: #9dd6ff;
   opacity: 0.5;
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  filter: blur(5px);
+  filter: blur(0px);
+}
+
+.fade-cursor-enter-active {
+  transition: all 1.4s ease-in-out;
+}
+.fade-cursor-leave-active {
+  transition: all 0s ease-in-out;
+}
+.fade-cursor-enter-from {
+  opacity: 0;
+}
+.fade-cursor-leave-to {
+  opacity: 0;
 }
