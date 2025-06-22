@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "montserrat";
+  background: #577ba6;
+  background-image: url(/img/q.jpg);
+  background-size: 100%;
+  overflow: hidden;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  background: transparent;
+  border-style: none;
+}
+.actent-font {
+  font-family: "TTFirsNeue";
+  font-weight: 400;
+  color: #fff;
+}
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s ease-in-out;
+}
+.page-enter-from {
+  transform: translateX(50px);
+  opacity: 0;
+}
+.page-leave-to {
+  transform: translateX(-50px);
+  opacity: 0;
+}
