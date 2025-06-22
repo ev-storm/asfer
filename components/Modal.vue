@@ -21,27 +21,25 @@ watch([x, y], () => {
 </script>
 
 <template>
-  <transition name="fade">
-    <div class="modal-con" v-show="isVisible">
-      <div class="modal">
-        <div class="modal_title">
-          <nuxt-img src="/svg/logo-mini.svg" alt="logo-modal" />
-          <h2 class="actent-font">
-            Обратная <br />
-            связь
-          </h2>
-        </div>
+  <div class="modal-con" v-show="isVisible">
+    <div class="modal">
+      <div class="modal_title">
+        <nuxt-img src="/svg/logo-mini.svg" alt="logo-modal" />
+        <h2 class="actent-font">
+          Обратная <br />
+          связь
+        </h2>
       </div>
-      <div
-        class="cursor-modal"
-        :style="{
-          left: x + 'px',
-          top: y - 180 + 'px',
-          transform: 'translateX(-' + xModal + 'px)',
-        }"
-      ></div>
     </div>
-  </transition>
+    <div
+      class="cursor-modal"
+      :style="{
+        left: x + 'px',
+        top: y - 180 + 'px',
+        transform: 'translateX(-' + xModal + 'px)',
+      }"
+    ></div>
+  </div>
 </template>
 
 <style scoped lang="scss">
