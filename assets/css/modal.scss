@@ -48,8 +48,10 @@
 
 .modal {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
-  top: 15%;
+  top: 100%;
   right: 5%;
   width: 400px;
   height: 600px;
@@ -57,31 +59,41 @@
   position: absolute;
   z-index: 2;
   border-radius: 40px;
-  background: #03194115;
+  background: #456bae38;
   z-index: 100;
-  backdrop-filter: blur(70px);
+  backdrop-filter: blur(50px);
 }
-.cursor-modal {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background: #9dd6ff;
-  opacity: 0.5;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(0px);
+.main-form {
+  display: flex;
+  flex-direction: column;
 }
-
-.fade-cursor-enter-active {
-  transition: all 1.4s ease-in-out;
+.main-form h2 {
+  color: #fff;
+  font-size: 10px;
 }
-.fade-cursor-leave-active {
-  transition: all 0s ease-in-out;
+.main-form label {
+  display: flex;
 }
-.fade-cursor-enter-from {
-  opacity: 0;
+.input {
+  background: transparent;
+  border-width: 1px;
+  border-color: #fff;
+  border-style: solid;
+  border-radius: 10vw;
+  padding: 5px 50px;
+  margin: 10px 0;
+  color: #fff;
+  font-size: 18px;
+  font-family: "TTFirsNeue";
+  font-weight: 300;
 }
-.fade-cursor-leave-to {
-  opacity: 0;
+.input::placeholder {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "TTFirsNeue";
+}
+.btn-form {
+  padding: 5px 50px;
+  margin: 10px 0;
 }

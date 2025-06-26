@@ -1,74 +1,44 @@
 <script setup>
-import { ref, computed, watch } from "vue";
-import { useMouse } from "@vueuse/core";
-
 const props = defineProps({
   isVisible: {
     type: Boolean,
     required: true,
   },
 });
-
-const { x, y } = useMouse();
-
-const modalRef = ref(null);
-
-const CURSOR_SIZE = 200;
-
-const cursorPos = ref({ left: -1000, top: -1000 });
-
-const updateCursorPos = () => {
-  if (!props.isVisible || !modalRef.value) {
-    cursorPos.value = { left: -1000, top: -1000 };
-    return;
-  }
-
-  const rect = modalRef.value.getBoundingClientRect();
-
-  let mouseX = x.value;
-  let mouseY = y.value;
-
-  const minX = rect.left + CURSOR_SIZE / 2;
-  const maxX = rect.left + rect.width - CURSOR_SIZE / 2;
-  const minY = rect.top + CURSOR_SIZE / 2;
-  const maxY = rect.top + rect.height - CURSOR_SIZE / 2;
-
-  mouseX = Math.max(minX, Math.min(maxX, mouseX));
-  mouseY = Math.max(minY, Math.min(maxY, mouseY));
-
-  cursorPos.value = {
-    left: mouseX - CURSOR_SIZE / 2 + "px",
-    top: mouseY - CURSOR_SIZE / 2 + "px",
-  };
-};
-watch([x, y], updateCursorPos);
-
-watch(
-  () => props.isVisible,
-  (val) => {
-    if (val) {
-      nextTick(updateCursorPos);
-    } else {
-      cursorPos.value = { left: -1000, top: -1000 };
-    }
-  }
-);
 </script>
 
 <template>
   <transition name="fade-modal">
     <div class="modal" ref="modalRef" v-show="isVisible">
       <div class="modal_title">
-        <nuxt-img src="/svg/logo-mini.svg" alt="logo-modal" />
+        <img src="/svg/logo-mini.svg" alt="logo-modal" />
         <h2 class="actent-font">
           Обратная <br />
           связь
         </h2>
       </div>
+      <form class="main-form">
+        <select class="input" name="work-item">
+          <option value="work-item_1">Билдборд</option>
+          <option value="work-item_2">Цифровые экраны</option>
+          <option value="work-item_3">Реклама на транспорте</option>
+          <option value="work-item_4">Остановки в вашем стиле</option>
+        </select>
+        <input class="input" type="text" placeholder="имя" />
+        <input class="input" type="text" placeholder="компания" />
+        <input class="input" type="tel" placeholder="телефон" />
+        <input class="input" type="mail" placeholder="почта" />
+        <input type="submit" class="btn btn-form" value="отправить" />
+        <label for="check-more">
+          <input id="check-more" type="checkbox" />
+          <h2>Детальное описание проекта</h2>
+        </label>
+        <label for="check-pol">
+          <input id="check-pol" type="checkbox" />
+          <h2>Согласен с политикой конфиденциальности</h2>
+        </label>
+      </form>
     </div>
-  </transition>
-  <transition name="fade-cursor">
-    <div class="cursor-modal" :style="cursorPos" v-show="isVisible"></div>
   </transition>
 </template>
 

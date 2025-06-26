@@ -1,7 +1,8 @@
-<script>
-// definePageMeta({
-//   layout: "lay-portfolio",
-// });
+<script setup>
+definePageMeta({
+  title: "Портфолио",
+  description: "Наше Портфолио",
+});
 </script>
 
 <template>

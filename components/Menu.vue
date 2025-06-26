@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Modal from "~/components/Modal.vue";
 import { ref, computed, onMounted, onBeforeUnmount, watch } from "vue";
 import { useMouse } from "@vueuse/core";
 import { useRouter } from "vue-router";
@@ -87,7 +86,7 @@ watch(
     </div>
     <button class="modal-btn">
       <transition name="fade-menu-btn">
-        <nuxt-img
+        <img
           v-if="!isModalVisible"
           @click="openModal"
           class="open-btn"
@@ -96,7 +95,7 @@ watch(
         />
       </transition>
       <transition name="fade-menu-btn">
-        <nuxt-img
+        <img
           v-if="isModalVisible"
           @click="closeModal"
           class="close-btn"

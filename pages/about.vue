@@ -1,4 +1,9 @@
-<script></script>
+<script setup>
+definePageMeta({
+  title: "О компании",
+  description: "О компании",
+});
+</script>
 
 <template>
   <div>

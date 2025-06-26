@@ -4,7 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
+    pageTransition: {
+      name: "page",
+      mode: "out-in",
+    },
   },
 
   vite: {
@@ -15,6 +18,10 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  ssr: false,
+  nitro: {
+    preset: "static",
   },
 
   modules: ["@nuxt/fonts", "@vueuse/nuxt", "nuxt-bezier", "@nuxt/image"],
